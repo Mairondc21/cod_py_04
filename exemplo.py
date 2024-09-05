@@ -1,14 +1,11 @@
 from loguru import logger
+from utils_log import log_decorator
 
-logger.add("meu_log.log", level="CRITICAL")
 
+@log_decorator
 def soma(x,y):
-    try:
-        soma = x+y
-        logger.info(f"voce digitou valores corretos, parabens {soma}")
-        return soma
-    except:
-        logger.critical("valores errados")
+    return x + y
+        
 
 
 soma(2,5)
